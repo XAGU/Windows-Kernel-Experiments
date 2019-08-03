@@ -18,7 +18,7 @@ DWORD __declspec(naked) ReadMemory(DWORD Address)
 }
 
 
-DWORD __declspec(naked) AllocMemory(DWORD Address)
+DWORD __declspec(naked) AllocMemory(DWORD size)
 {
 	__asm
 	{
@@ -31,6 +31,7 @@ DWORD __declspec(naked) AllocMemory(DWORD Address)
 int main()
 {
 	printf("%p/n", ReadMemory(0x80b95400));
+	printf("%p/n", AllocMemory(102400000));
 	system("pause");
 	return 0;
 }
